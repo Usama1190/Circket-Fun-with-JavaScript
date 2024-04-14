@@ -17,39 +17,66 @@
         <h1>Circket World</h1>
         <h2>JSL (JavaScript Super League)</h2>
 
-        <div id="con-1">
-            <h3>Log in</h3>
-            <input type="text" placeholder="Enter your name">
-            <button type="button" onclick="login()">Log in</button>
+        <div class="nav">
+            <span class="span1"> <span class="circle" id="circle">Y</span> <span id="username">You</span></span>
+            <div class="inside" id="inside">
+                <span class="img"><img src="" alt="" class="img" id="img1"></span> 
+                <span class="vs" id="vs"></span> 
+                <span class="img"><img src="" alt="" class="img" id="img2"></span>
+            </div>
+            <span class="span2"> <span>uSama </span> <span class="circle">U</span></span>
+        </div>
+
+        <div id="con-1" class="show">
+            <input type="text" placeholder="Enter your name" id="userinput"><br><br>
+            <button type="button" onclick="login()" class="btn1">Log in</button>
+        </div>
+
+        <div id="con-2" class="hide">
+            <h3 id="head-1">Pick your team</h3>
+            <h3 class="hide" id="head-2">Pick oppenent team</h3>
+
+            <div class="teams">
+                <img src="assets/pakistan.jpg" alt="Pakistan" class="images" onclick="Teams(id)" id="pak">
+                <img src="assets/new zealand1.png" alt="Pakistan" class="images" onclick="Teams(id)" id="newz">
+                <img src="assets/afghanistan.png" alt="Pakistan" class="images" onclick="Teams(id)" id="afg">
+                <img src="assets/india2.png" alt="Pakistan" class="images" onclick="Teams(id)" id="ind">
+                <img src="assets/westindies1.png" alt="Pakistan" class="images" onclick="Teams(id)" id="wes">
+                <img src="assets/austria2.png" alt="Pakistan" class="images" onclick="Teams(id)" id="aus">
+                <img src="assets/srilanka.jpeg" alt="Pakistan" class="images" onclick="Teams(id)" id="sri">
+                <img src="assets/england1.png" alt="Pakistan" class="images" onclick="Teams(id)" id="eng"><br><br>
+                <p id="para2"></p><br>
+                <button type="button" class="btn2" onclick="Toss()">Ready to Toss</button>
+            </div>
+        </div>
+
+        <div id="con-3" class="hide">
+            <button type="button" onclick="toss()" class="btn3">Head</button>
+            <button type="button" onclick="toss()" class="btn4">Tail</button>
+        </div>
+
+        <div id="con-4" class="hide">
+            <p>What will you decide?</p>
+            <button type="button" onclick="batting()" class="btn5">Batting</button>
+            <button type="button" onclick="bowling()" class="btn6">Bowling</button>
+        </div>
+
+        <div id="con-5" class="hide">
+            <p id="para3"></p>
+
+            <div class="con-6">
+                <div class="con-7"></div>
+                <button type="button" onclick="startMatch()" class="btn7">Start Match</button>
+                <div class="con-8"></div>
+            </div>
         </div>
 
         <div class="footer">
-            <p>Design by uSam@IsrAr.</p>
+            <p>Design by uSam@IsrAr. <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BHjJAxKatTPGsVm2ZSgCIvQ%3D%3D" target="_blank">Linkedin/uSama</a></p>
         </div>
 
-        <!-- <div id="container-2">
-            <h3>Pick your team</h3>
-            <button type="button" onclick="teamA()">Team A</button>
-            <button type="button" onclick="teamB()">Team B</button>
-        </div>
-
-        <div id="container-3">
-            <p id="seletedTeam"></p>
-            <p>Enter at least 4 player names</p>
-            <input type="text" id="playerName" placeholder="Enter your favorite player names">
-
-            <button type="button" onclick="addPlayers()">Add player</button><br><br>
-
-            <div class="container-4">
-                <p id="selectedPlayer">Selected Player...</p>
-            </div>
-
-            <button type="button" onclick="readyToss()">Ready to Toss</button>
-        </div>
-
-        <div id="container-5">
-            <button type="button" onclick="toss()">Head</button>
-            <button type="button" onclick="toss()">Tail</button>
+        <!--<div id="container-5">
+            
         </div>
 
         <div id="container-6">

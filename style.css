@@ -4,6 +4,8 @@
     --color-2: #436850;
     --color-3: #ADBC9F;
     --color-4: #FBFADA;
+    --color-5: #fff;
+    --color-6: #272626;
 }
 
 body 
@@ -13,13 +15,15 @@ body
     font-family: 'Oswald', sans-serif;
 }
 
-/* .main-container
+.hide 
 {
-    width: 99vw;
-    height: 99vh;
-    border: 2px solid #000;
-    overflow: hidden;
-} */
+    display: none;
+}
+
+.show
+{
+    display: inline-block;
+}
 
 .main-con
 {
@@ -32,13 +36,200 @@ body
     /* border: 2px solid #000; */
 }
 
-.main-con #con-1
+.main-con .nav
+{
+    margin: auto;
+    width: 90vw;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid var(--color-4); */
+    border-bottom: 1px solid var(--color-4);
+}
+
+.main-con .nav .circle
+{
+    padding: 8px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--color-5);
+    border-radius: 50%;
+}
+
+.main-con .nav .inside
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid #000; */
+}
+
+.main-con .nav .inside .img
+{
+    /* margin: 0 5px; */
+    width: 60px;
+    height: 35px;
+    border-radius: 4px;
+}
+
+.main-con .nav .inside .vs
+{
+    margin: 0 10px;
+}
+
+.main-con #con-1, #con-2
 {
     margin: auto;
     text-align: center;
-    width: 360px;
-    height: 450px;
+    width: 560px;
+    height: 100%;
+    /* border: 2px solid #000; */
+}
+
+.main-con #con-1 #userinput
+{
+    margin-top: 50px;
+    width: 220px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+}
+
+.main-con #con-1 #userinput:focus
+{
+    outline: none;
+}
+
+.main-con #con-1 .btn1
+{
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: var(--color-1);
+    border-radius: 4px;
+    background-color: var(--color-3);
+    box-shadow: 2px 2px 2px var(--color-6);
+}
+
+.main-con #con-1 .btn1:hover
+{
+    cursor: pointer;
+    scale: 1.03;
+    background-color: var(--color-4);
+}
+
+.main-con #con-2 .teams
+{
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-6);
+}
+
+.main-con #con-2 .teams .images
+{
+    margin: 10px;
+    width: 100px;
+    height: 60px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 4px 4px 6px var(--color-6);
+    /* border: 2px solid #000; */
+}
+
+.main-con #con-2 .btn2
+{
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: var(--color-1);
+    border-radius: 4px;
+    background-color: var(--color-3);
+    box-shadow: 2px 2px 2px var(--color-6);
+}
+
+.main-con #con-2 .btn2:hover
+{
+    cursor: pointer;
+    scale: 1.03;
+    background-color: var(--color-4);
+}
+
+.main-con #con-2 .teams .images:hover
+{
+    scale: 1.03;
+}
+
+.main-con #con-3 .btn3, .btn4
+{
+    margin: 60px 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px double var(--color-6);
+    color: var(--color-1);
+    background-color: #f2ccbd;
+    box-shadow: 2px 2px 2px var(--color-6);
+}
+
+.main-con #con-3 .btn3:hover, .btn4:hover
+{
+    cursor: pointer;
+    scale: 1.03;
+    background-color: var(--color-4);
+}
+
+.main-con #con-4 .btn5, .btn6
+{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.main-con #con-4 .btn5:hover, .btn6:hover
+{
+    cursor: pointer;
+    scale: 1.03;
+    background-color: var(--color-4);
+}
+
+.main-con #con-5
+{
+    width: 90vw;
+    height: 100%;
     border: 2px solid #000;
+}
+
+.main-con #con-5 .con-6
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    border: 2px solid #000;
+}
+
+.main-con #con-5 .con-6 .con-7, .con-8
+{
+    width: 40%;
+    height: 100%;
+    border: 2px solid #000;
+    margin: auto;
+}
+
+.main-con #con-5 .con-6 .btn7
+{
+    width: 80px;
+    height: 40px;
+    border-radius: 25px;
+}
+
+.main-con #con-5 .con-6 .btn7:hover
+{
+    cursor: pointer;
+    scale: 1.03;
+    background-color: var(--color-4);
 }
 
 .main-con .footer
@@ -48,13 +239,19 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin: auto; */
     width: 100%;
     height: 50px;
     color: var(--color-4);
     background-color: var(--color-2);
-    /* border: 2px solid black; */
 }
+
+@media (max-width: 460px) {
+    .main-con, #con-1, #con-2 {
+        max-width: 100%;
+    }
+}
+
+
 
 .container-1 #container-3
 {
