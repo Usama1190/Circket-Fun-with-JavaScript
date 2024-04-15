@@ -13,6 +13,7 @@ body
     padding: 0;
     margin: 0;
     font-family: 'Oswald', sans-serif;
+    background-color: var(--color-1);
 }
 
 .hide 
@@ -27,13 +28,13 @@ body
 
 .main-con
 {
-    overflow: hidden;
+    /* overflow: hidden; */
     text-align: center;
     width: 99vw;
-    height: 99vh;
+    height: 100%;
     background-color: var(--color-1);
     color: var(--color-4);
-    /* border: 2px solid #000; */
+    /* border: 1px solid var(--color-3); */
 }
 
 .main-con .nav
@@ -183,6 +184,7 @@ body
 {
     width: 80px;
     height: 80px;
+    border: none;
     border-radius: 10px;
 }
 
@@ -196,7 +198,7 @@ body
 .main-con #con-5
 {
     width: 90vw;
-    height: 100%;
+    /* height: 100%; */
     border: 2px solid #000;
 }
 
@@ -206,7 +208,7 @@ body
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 300px;
+    height: 100%;
     border: 2px solid #000;
 }
 
@@ -217,6 +219,12 @@ body
     border: 2px solid #000;
     margin: auto;
 }
+
+.main-con #con-5 .con-6 .con-7 .players, .con-8 .players
+{
+    margin-left: 0;
+}
+
 
 .main-con #con-5 .con-6 .btn7
 {
@@ -232,9 +240,45 @@ body
     background-color: var(--color-4);
 }
 
+.main-con #con-5 .con-6 .con-7 #img3
+{
+    width: 60px;
+    height: 35px;
+    float: left;
+    border-radius: 4px;
+}
+
+.main-con #con-5 .con-6 .con-8 #img4
+{
+    width: 60px;
+    height: 35px;
+    float: left;
+    border-radius: 4px;
+}
+
+.main-con #con-9 .btn8
+{
+    width: 100px;
+    height: 30px;
+    margin: 20px;
+    border: none;
+    color: var(--color-1);
+    border-radius: 4px;
+    background-color: var(--color-3);
+    box-shadow: 2px 2px 2px var(--color-6);
+}
+
+.main-con #con-9 .btn8:hover
+{
+    cursor: pointer;
+    scale: 1.03;
+    background-color: var(--color-4);
+}
+
 .main-con .footer
 {
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     bottom: 0;
     display: flex;
     justify-content: center;

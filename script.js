@@ -41,6 +41,13 @@ function Teams(id) {
 
     let img2 = document.getElementById('img2').attributes[0];
     img2.value = country_list[1];
+
+
+    let img3 = document.getElementById('img3').attributes[0];
+    img3.value = country_list[0];
+
+    let img4 = document.getElementById('img4').attributes[0];
+    img4.value = country_list[1];
 }
 
 function Toss() {
@@ -87,64 +94,11 @@ function bowling() {
     document.getElementById('para3').style.color = '#5cb85c';
 }
 
-// function addPlayers() {
-//     let playerNames = document.getElementById('playerName').value;
-//     playerNameList.push(playerNames);
+function startMatch() {
+    document.getElementById('con-5').style.display = 'none';
+    document.getElementById('con-9').classList = 'show';
+}
 
-//     if(playerNames !== undefined) {
-//         document.getElementById('selectedPlayer').innerHTML = playerNameList;
-//     }
-//     else {
-//         document.getElementById('selectedPlayer').innerHTML = 'Please enter player names';
-//     }
+function superOver() {}
 
-//     if(playerNameList.length > 11) {
-//         playerNameList.pop();
-//     }
-// }
-
-// function readyToss() {
-//     if(playerNameList.length > 3) {
-//         document.getElementById('container-3').style.display = 'none';
-//     }
-// }
-
-// function toss() {
-//     let head = 0;
-//     let tail = 1;
-//     let x = parseInt(Math.random() * 2);
-
-//     if(head == x) {
-//         alert('You won!');
-//         document.getElementById('container-5').style.display = 'none';
-//     }
-//     else {
-//         alert('You loss!');
-//         document.getElementById('container-5').style.display = 'none';
-//         document.getElementById('container-6').style.display = 'none';
-//         document.getElementById('con-9-1').innerHTML = playerNameList;
-//         document.getElementById('con-10-1').innerHTML = 
-//         'Shane Watson' + '<br>' + 'Shane Watson' + '<br>'  + 
-//         'Kevin Pieterson' + '<br>' + 'Shane Watson';
-//     }
-// }
-
-// function batting() {
-//     document.getElementById('container-6').style.display = 'none';
-
-//     document.getElementById('con-9-1').innerHTML = playerNameList;
-//     document.getElementById('con-10-1').innerHTML = 
-//     'Shane Watson' + '<br><br>' + 'Shane Watson' + '<br><br>'  + 
-//     'Kevin Pieterson' + '<br><br>' + 'Shane Watson';
-// }
-
-// function balling() {
-//     document.getElementById('container-6').style.display = 'none';
-
-//     document.getElementById('head-2').innerHTML = 'Your Balling';
-
-//     document.getElementById('con-9-1').innerHTML = playerNameList;
-//     document.getElementById('con-10-1').innerHTML = 
-//     'Shane Watson' + '<br>' + 'Shane Watson' + '<br>'  + 
-//     'Kevin Pieterson' + '<br>' + 'Shane Watson';
-// }
+function testMatch() {}
