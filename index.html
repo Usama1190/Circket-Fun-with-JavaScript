@@ -29,6 +29,7 @@
 
         <div id="con-1" class="show">
             <input type="text" placeholder="Enter your name" id="userinput"><br><br>
+            <p id="para1"></p>
             <button type="button" onclick="login()" class="btn1">Log in</button>
         </div>
 
@@ -57,14 +58,14 @@
 
         <div id="con-4" class="hide">
             <p>What will you decide?</p>
-            <button type="button" onclick="batting()" class="btn5">Batting</button>
-            <button type="button" onclick="bowling()" class="btn6">Bowling</button>
+            <button type="button" onclick="batting()" class="btn5"><img src="assets/batsman-removebg-preview.png" alt="" class="img"></button>
+            <button type="button" onclick="bowling()" class="btn6"><img src="assets/bowllar-removebg-preview.png" alt="" class="img"></button>
         </div>
 
         <div id="con-5" class="hide">
             <p id="para3"></p>
 
-            <div class="con-6">
+            <div id="con-6">
                 <div class="con-7">
                     <img src="" alt="" id="img3"><span id="country-name"></span><br><br>
                     <p id="player1" class="players">Player1</p>
@@ -95,46 +96,48 @@
                     <p id="player-oppo11" class="players">Player1</p>
                 </div>
             </div>
-        </div>
 
-        <div id="con-9" class="hide">
-            <button type="button" onclick="superOver()" class="btn8">Super over</button>
-            <button type="button" onclick="testMatch()" class="btn8">Test match</button>
+            <div id="con-9" class="hide">
+                <button type="button" onclick="matchType(id)" class="btn8" 
+                id="so">Super over</button>
+
+                <button type="button" onclick="matchType(id)" class="btn8" 
+                id="tm">Test match</button>
+            </div>
+
+            <div id="con-10" class="hide">
+                <p id="para4"></p>
+
+                <div id="con-11">
+                    <button type="button" onclick="Score()" id="imgbat" 
+                    class="hide batbalbtn">
+                    <img src="assets/batsman-removebg-preview.png" alt="" 
+                    class="batbal"></button>
+
+                    <button type="button" onclick="Score()" id="imgbal" 
+                    class="hide batbalbtn">
+                    <img src="assets/bowllar-removebg-preview.png" alt="" 
+                    class="batbal"></button>
+                </div>
+
+                <div id="scoreFooter">
+                    <span><img src="" alt="" id="img5"></span>
+
+                    <span id="score"></span>
+                    <span id="wic"></span>
+                    <span id="balls"></span>
+                    <span id="Target"></span>
+                    <span id="remaining-balls"></span>
+                    <span id="remaining-score"></span>
+
+                    <span><img src="" alt="" id="img6"></span>
+                </div>
+            </div>
         </div>
 
         <div class="footer">
-            <p>Design by uSam@IsrAr. <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BHjJAxKatTPGsVm2ZSgCIvQ%3D%3D" target="_blank">Linkedin/uSama</a></p>
+            <p>Design by <a href="https://www.linkedin.com/in/usama-israr-khan-3b68312ab/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BHjJAxKatTPGsVm2ZSgCIvQ%3D%3D" target="_blank">uSam@iSrar/linkedin</a></p>
         </div>
-
-        <!--<div id="container-5">
-            
-        </div>
-
-        <div id="container-6">
-            <h2>Super Over</h2>
-            <button type="button" onclick="batting()">Batting</button>
-            <button type="button" onclick="balling()">Balling</button>
-        </div>
-
-        <div id="container-7">
-            <h2>Super Over</h2>
-
-            <div class="con-8">
-
-                <div id="con-9">
-                    <h2 id="head-1">your team</h2>
-                    <div id="con-9-1">cno-9-1</div>
-                </div>
-
-                <div id="con-10">
-                    <h2 id="head-2">opponent team</h2>
-                    <div id="con-10-1">con-10-1</div>
-                </div>
-                
-            </div>
-
-            <button type="button">Start Match</button>
-        </div> -->
     </div>
     <script src="script.js"></script>
 </body>
