@@ -34,8 +34,8 @@
         </div>
 
         <div id="con-2" class="hide">
-            <h3 id="head-1">Pick your team</h3>
-            <h3 class="hide" id="head-2">Pick oppenent team</h3>
+            <h3 id="head-1">Select your team</h3>
+            <h3 class="hide" id="head-2">Select oppenent team</h3>
 
             <div class="teams">
                 <img src="assets/pakistan.jpg" alt="Pakistan" class="images" onclick="Teams(id)" id="pak">
@@ -58,8 +58,8 @@
 
         <div id="con-4" class="hide">
             <p>What will you decide?</p>
-            <button type="button" onclick="batting()" class="btn5"><img src="assets/batsman-removebg-preview.png" alt="" class="img"></button>
-            <button type="button" onclick="bowling()" class="btn6"><img src="assets/bowllar-removebg-preview.png" alt="" class="img"></button>
+            <button type="button" onclick="decide(id)" id="bat" class="btn5"><img src="assets/batsman-removebg-preview.png" alt="" class="img"></button>
+            <button type="button" onclick="decide(id)" id="bal" class="btn6"><img src="assets/bowllar-removebg-preview.png" alt="" class="img"></button>
         </div>
 
         <div id="con-5" class="hide">
@@ -68,7 +68,7 @@
             <div id="con-6">
                 <div class="con-7">
                     <img src="" alt="" id="img3"><span id="country-name"></span><br><br>
-                    <p id="player1" class="players">Player1</p>
+                    <!-- <p id="player1" class="players">Player1</p>
                     <p id="player2" class="players">Player1</p>
                     <p id="player3" class="players">Player1</p>
                     <p id="player4" class="players">Player1</p>
@@ -78,12 +78,12 @@
                     <p id="player8" class="players">Player1</p>
                     <p id="player9" class="players">Player1</p>
                     <p id="player10" class="players">Player1</p>
-                    <p id="player11" class="players">Player1</p>
+                    <p id="player11" class="players">Player1</p> -->
                 </div>
                 <button type="button" onclick="startMatch()" class="btn7">Start Match</button>
                 <div class="con-8">
-                    <img src="" alt="" id="img4"><span id="oppo-country-name"></span><br><br>
-                    <p id="player-oppo1" class="players">Player1</p>
+                    <span id="oppo-country-name"></span><img src="" alt="" id="img4"><br><br>
+                    <!-- <p id="player-oppo1" class="players">Player1</p>
                     <p id="player-oppo2" class="players">Player1</p>
                     <p id="player-oppo3" class="players">Player1</p>
                     <p id="player-oppo4" class="players">Player1</p>
@@ -93,7 +93,7 @@
                     <p id="player-oppo8" class="players">Player1</p>
                     <p id="player-oppo9" class="players">Player1</p>
                     <p id="player-oppo10" class="players">Player1</p>
-                    <p id="player-oppo11" class="players">Player1</p>
+                    <p id="player-oppo11" class="players">Player1</p> -->
                 </div>
             </div>
 
@@ -107,6 +107,7 @@
 
             <div id="con-10" class="hide">
                 <p id="para4"></p>
+                <p id="para5" class="hide">para5</p>
 
                 <div id="con-11">
                     <button type="button" onclick="Score()" id="imgbat" 
@@ -118,17 +119,30 @@
                     class="hide batbalbtn">
                     <img src="assets/bowllar-removebg-preview.png" alt="" 
                     class="batbal"></button>
+
+
+
+                    <button type="button" onclick="secondScore()" id="imgbat2" 
+                    class="hide batbalbtn">
+                    <img src="assets/batsman-removebg-preview.png" alt="" 
+                    class="batbal"></button>
+
+                    <button type="button" onclick="secondScore()" id="imgbal2" 
+                    class="hide batbalbtn">
+                    <img src="assets/bowllar-removebg-preview.png" alt="" 
+                    class="batbal"></button>
                 </div>
 
                 <div id="scoreFooter">
                     <span><img src="" alt="" id="img5"></span>
 
+                    <span>|</span>
                     <span id="score"></span>
                     <span id="wic"></span>
                     <span id="balls"></span>
                     <span id="Target"></span>
-                    <span id="remaining-balls"></span>
-                    <span id="remaining-score"></span>
+                    <span>|</span>
+                    <span id="startSecondIning" class="hide" onclick="startSecond()"></span>
 
                     <span><img src="" alt="" id="img6"></span>
                 </div>
