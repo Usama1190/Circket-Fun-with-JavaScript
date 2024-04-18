@@ -35,9 +35,6 @@ function Teams(id) {
     if(country_list[0] == 'assets/pakistan.jpg') {
         our_country_name = 'Pakistan';
     }
-    else if(country_list[0] == 'assets/pakistan.jpg') {
-        our_country_name = 'Pakistan';
-    }
     else if(country_list[0] == 'assets/new zealand1.png') {
         our_country_name = 'New zealand';
     }
@@ -48,10 +45,10 @@ function Teams(id) {
         our_country_name = 'India';
     }
     else if(country_list[0] == 'assets/westindies1.png') {
-        our_country_name = 'West indeis';
+        our_country_name = 'West Indies';
     }
     else if(country_list[0] == 'assets/austria2.png') {
-        our_country_name = 'Austrilia';
+        our_country_name = 'Australia';
     }
     else if(country_list[0] == 'assets/srilanka.jpeg') {
         our_country_name = 'Srilanka';
@@ -77,10 +74,10 @@ function Teams(id) {
         oppo_country_name = 'India';
     }
     else if(country_list[1] == 'assets/westindies1.png') {
-        oppo_country_name = 'West indeis';
+        oppo_country_name = 'West Indies';
     }
     else if(country_list[1] == 'assets/austria2.png') {
-        oppo_country_name = 'Austrilia';
+        oppo_country_name = 'Australia';
     }
     else if(country_list[1] == 'assets/srilanka.jpeg') {
         oppo_country_name = 'Srilanka';
@@ -208,6 +205,8 @@ function matchType(id) {
     document.getElementById('con-10').classList = 'show';
 }
 
+// first ining
+var score;
 
 var list_of_score = [];
 
@@ -215,10 +214,25 @@ var list_of_acurate_score = [];
 
 var list_of_wickets = [];
 
+var sum_of_score_global = 0;
+
+var target;
+
+// second ining
+var score2;
+
+var list_of_score2 = [];
+
+var list_of_acurate_score2 = [];
+
+var list_of_wickets2 = [];
+
+var sum_of_score2_global = 0;
+
 
 function Score() {
 
-    let score = parseInt(Math.random() * 11);
+    score = parseInt(Math.random() * 11);
 
     let push_score_list = list_of_score.push(score);
 
@@ -227,37 +241,48 @@ function Score() {
     }
 
     if(score == 0) {
-        alert('Dot ball');
+        document.getElementById('para6').innerHTML = 'Dot ball';
+        document.getElementById('para6').style.fontSize = '35px';
     }
     else if(score == 1) {
-        alert('Just single');
+        document.getElementById('para6').innerHTML = 'Just single';
+        document.getElementById('para6').style.fontSize = '35px';
     }
     else if(score == 2) {
-        alert('Couple');
+        document.getElementById('para6').innerHTML = 'Couple of runs';
+        document.getElementById('para6').style.fontSize = '35px';
     }
     else if(score == 3) {
-        alert('3 runs');
+        document.getElementById('para6').innerHTML = '3 runs';
+        document.getElementById('para6').style.fontSize = '35px';
     }
     else if(score == 4) {
-        alert('Boundary, 4 runs');
+        document.getElementById('para6').innerHTML = 'Boundary, 4 runs';
+        document.getElementById('para6').style.fontSize = '35px';
     }
     else if(score == 5) {
-        alert('No ball + boundary. 4 runs');
+        document.getElementById('para6').innerHTML = '5 runs';
+        document.getElementById('para6').style.fontSize = '35px';
     }
     else if(score == 6) {
-        alert('Boundary, 6 runs!');
+        document.getElementById('para6').innerHTML = 'Boundary, 6 runs';
+        document.getElementById('para6').style.fontSize = '35px';
     }
     else if(score == 7) {
-        alert('OUT, Bowled!');
+        document.getElementById('para6').innerHTML = 'OUT, Bowled!';
+        document.getElementById('para6').style.fontSize = '35px';
     }
     else if(score == 8) {
-        alert('OUT, LBW!');
+        document.getElementById('para6').innerHTML = 'OUT, LBW!';
+        document.getElementById('para6').style.fontSize = '35px';
     }
     else if(score == 9) {
-        alert('OUT, Catch!');
+        document.getElementById('para6').innerHTML = 'OUT, Catch!';
+        document.getElementById('para6').style.fontSize = '35px';
     }
     else if(score == 10) {
-        alert('OUT, Run out!');
+        document.getElementById('para6').innerHTML = 'OUT, Run out!';
+        document.getElementById('para6').style.fontSize = '35px';
     }
 
     if(score > 6) {
@@ -274,23 +299,21 @@ function Score() {
         sum_of_score += list_of_acurate_score[i];
     }
 
-    console.log(a, 'inside score');
+    sum_of_score_global = sum_of_score;
+
+    console.log(sum_of_score_global, 'sum of score global');
 
     if( a == 1) {
         document.getElementById('score').innerHTML = 
         our_country_name + ': ' + sum_of_score;
-        console.log(a, 'our country name');
     }
     else if(a == 0) {
         document.getElementById('score').innerHTML = 
         oppo_country_name + ': ' + sum_of_score;
-        console.log(a, 'oppo country name');
     }
 
-    
-
     if(list_of_score.length > 5) {
-        let target = sum_of_score + 1;
+        target = sum_of_score + 1;
         document.getElementById('Target').innerHTML = 'Target: ' + target;
 
         document.getElementById('startSecondIning').classList = 'show';
@@ -298,16 +321,20 @@ function Score() {
 
         document.getElementById('para5').classList = 'show';
 
-        console.log(a, 'score, length > 5');
+        if(a == 0) {
+            a = 1;
+        }
+        else {
+            a = 0;
+        }
 
         if(a == 1) {
-            document.getElementById('para5').innerHTML = oppo_country_name + 
+            document.getElementById('para5').innerHTML = our_country_name + 
             ' needs ' + target + ' runs in ' + list_of_score.length + 
             ' balls to win.';
 
             document.getElementById('score').innerHTML = 
-            our_country_name + ': ' + sum_of_score;
-            console.log(a, 'our country name');
+            oppo_country_name + ': ' + sum_of_score;
         }
         else if(a == 0) {
             document.getElementById('para5').innerHTML = oppo_country_name + 
@@ -315,29 +342,13 @@ function Score() {
             ' balls to win.';
 
             document.getElementById('score').innerHTML = 
-            oppo_country_name + ': ' + sum_of_score;
-            console.log(a, 'oppo country name');
+            our_country_name + ': ' + sum_of_score;
         }
-
-        // if( a == 1) {
-        //     document.getElementById('score').innerHTML = 
-        //     our_country_name + ': ' + sum_of_score;
-        //     console.log(a, 'our country name');
-        // }
-        // else if(a == 0) {
-        //     document.getElementById('score').innerHTML = 
-        //     oppo_country_name + ': ' + sum_of_score;
-        //     console.log(a, 'oppo country name');
-        // }
-
-        document.getElementById('para5').innerHTML = 
-        our_country_name + ' needs ' + target + ' runs in ' + 
-        list_of_score.length + ' balls to win.';
     }
 
     if(score > 6) {
         list_of_wickets.push('w');
-        console.log(list_of_wickets);
+        // console.log(list_of_wickets);
     }
 
     document.getElementById('wic').innerHTML ='Wics: ' + list_of_wickets.length;
@@ -347,54 +358,208 @@ function Score() {
 
 
 function startSecond() {
-    list_of_score.length = 0;
-    list_of_acurate_score.length = 0;
-
-    list_of_wickets.length = 0;
-
-    console.log(list_of_score);
-    console.log(list_of_acurate_score);
-    console.log(list_of_wickets);
 
     document.getElementById('startSecondIning').classList = 'hide';
-    document.getElementById('wic').innerHTML ='Wics: ' + list_of_wickets.length;
-    document.getElementById('balls').innerHTML = 'Over: ' + list_of_score;
-
-    // document.getElementById('score').innerHTML = 
-    // our_country_name + ': ' + sum_of_score;
+    document.getElementById('wic').innerHTML ='Wics: ' + list_of_wickets2.length;
+    document.getElementById('balls').innerHTML = 'Over: ' + list_of_score2.length;
 
     document.getElementById('con-11').classList.add('show');
+
+    document.getElementById('imgbat').classList = 'hide batbalbtn';
+    document.getElementById('imgbal').classList = 'hide batbalbtn';
+
+    if( a == 0) {
+        document.getElementById('imgbat2').classList = 'hide batbalbtn';
+        document.getElementById('imgbal2').classList = 'show batbalbtn';
+
+        document.getElementById('score').innerHTML = 
+        oppo_country_name + ': ' + sum_of_score2_global;
+        // console.log(a, 'oppo country name');
+    }
+    else if(a == 1) {
+        document.getElementById('imgbat2').classList = 'show batbalbtn';
+        document.getElementById('imgbal2').classList = 'hide batbalbtn';
+
+        document.getElementById('score').innerHTML = 
+        our_country_name + ': ' + sum_of_score2_global;
+        // console.log(a, 'our country name');
+    }
 
     if(list_of_score.length > 5) {
         document.getElementById('con-11').classList.add('hide');
     }
+}
 
-    console.log(a , 'second ining');
 
-    let sum_of_score = 0;
 
-    for(let i = 0; i < list_of_acurate_score.length; i++) {
-        sum_of_score += list_of_acurate_score[i];
+function secondScore() {
+
+    score2 = parseInt(Math.random() * 11);
+
+    let push_score_list = list_of_score2.push(score2);
+
+    // console.log(list_of_score2, 'list of score2 first');
+
+    // console.log(list_of_score2.length, 'list of score 2 length first');
+
+    if(list_of_score2.length > 5) {
+        document.getElementById('con-11').classList.add('hide');
     }
 
-    if( a == 1) {
+
+    if(score2 == 0) {
+        document.getElementById('para6').innerHTML = 'Dot ball';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+    else if(score2 == 1) {
+        document.getElementById('para6').innerHTML = 'Just single';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+    else if(score2 == 2) {
+        document.getElementById('para6').innerHTML = 'Couple of runs';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+    else if(score2 == 3) {
+        document.getElementById('para6').innerHTML = '3 runs';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+    else if(score2 == 4) {
+        document.getElementById('para6').innerHTML = 'Boundary, 4 runs';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+    else if(score2 == 5) {
+        document.getElementById('para6').innerHTML = '5 runs';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+    else if(score2 == 6) {
+        document.getElementById('para6').innerHTML = 'Boundary, 6 runs';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+    else if(score2 == 7) {
+        document.getElementById('para6').innerHTML = 'OUT, Bowled!';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+    else if(score2 == 8) {
+        document.getElementById('para6').innerHTML = 'OUT, LBW!';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+    else if(score2 == 9) {
+        document.getElementById('para6').innerHTML = 'OUT, Catch!';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+    else if(score2 == 10) {
+        document.getElementById('para6').innerHTML = 'OUT, Run out!';
+        document.getElementById('para6').style.fontSize = '35px';
+    }
+
+    if(score2 > 6) {
+        list_of_score2.pop();
+        list_of_score2.push('w');
+    }
+    else if(score2 < 7) {
+        list_of_acurate_score2.push(score2);
+    }
+
+    console.log(list_of_score2, 'list of score 2');
+
+    console.log(list_of_score2.length, 'list score 2 length');
+
+    console.log(list_of_acurate_score2, 'list accurate score 2 length = 2');
+
+    console.log(list_of_acurate_score2.length, 'list accurate score 2 length = 2');
+
+    let sum_of_score2 = 0;
+
+    for(let i = 0; i < list_of_acurate_score2.length; i++) {
+        sum_of_score2 += list_of_acurate_score2[i];
+    }
+
+    sum_of_score2_global = sum_of_score2;
+
+    console.log(sum_of_score2, 'sum of score2');
+
+    console.log(a, 'a inside score');
+
+
+    if( a == 0) {
         document.getElementById('score').innerHTML = 
-        oppo_country_name + ': ' + sum_of_score;
-        console.log(a, 'our country name');
+        oppo_country_name + ': ' + sum_of_score2;
     }
-    else if(a == 0) {
+    else if(a == 1) {
         document.getElementById('score').innerHTML = 
-        our_country_name + ': ' + sum_of_score;
-        console.log(a, 'oppo country name');
+        our_country_name + ': ' + sum_of_score2;
     }
 
+    if(sum_of_score2_global > sum_of_score_global) {
+        document.getElementById('con-11').classList = 'hide';
 
-    if( a == 1) {
-        document.getElementById('imgbat').classList = 'hide batbalbtn';
-        document.getElementById('imgbal').classList = 'show batbalbtn';
+        if( a == 0) {
+            document.getElementById('winingTeam').innerHTML = 
+            oppo_country_name + ' won';
+            document.getElementById('para5').classList = 'hide';
+            document.getElementById('para6').classList = 'hide';
+        }
+        else if(a == 1) {
+            document.getElementById('winingTeam').innerHTML = 
+            our_country_name + ' won';
+            document.getElementById('para5').classList = 'hide';
+            document.getElementById('para6').classList = 'hide';
+        }
     }
-    else if(a == 0) {
-        document.getElementById('imgbat').classList = 'show batbalbtn';
-        document.getElementById('imgbal').classList = 'hide batbalbtn';
+
+    console.log(list_of_score2, 'list_of_score2');
+    console.log(list_of_acurate_score2, 'list_of_acurate_score2');
+    console.log(list_of_wickets2, 'list_of_wickets2');
+    console.log(sum_of_score_global, 'sum_of_score_global');
+    console.log(sum_of_score2_global, 'sum_of_score2_global');
+
+
+    if(list_of_score2.length > 5) {
+        document.getElementById('con-11').classList = 'hide';
+
+
+        if(sum_of_score2_global < sum_of_score_global) {
+            document.getElementById('con-11').classList = 'hide';
+    
+            if( a == 1) {
+                document.getElementById('winingTeam').innerHTML = 
+                oppo_country_name + ' won';
+                document.getElementById('para5').classList = 'hide';
+                document.getElementById('para6').classList = 'hide';
+            }
+            else if(a == 0) {
+                document.getElementById('winingTeam').innerHTML = 
+                our_country_name + ' won';
+                document.getElementById('para5').classList = 'hide';
+                document.getElementById('para6').classList = 'hide';
+            }
+        }
+
+        if(sum_of_score2_global == sum_of_score_global) {
+            document.getElementById('con-11').classList = 'hide';
+            document.getElementById('winingTeam').innerHTML = 'Match Tied';
+            document.getElementById('para5').classList = 'hide';
+            document.getElementById('para6').classList = 'hide';
+        }
     }
+
+    if(score2 > 6) {
+        list_of_wickets2.push('w');
+        // console.log(list_of_wickets2);
+    }
+
+    document.getElementById('balls').innerHTML = 'Over: ' + list_of_score2;
+
+    document.getElementById('wic').innerHTML ='Wics: ' + list_of_wickets2.length;
+
+    // console.log(score, 'score');
+    // console.log(list_of_score, 'list score');
+    // console.log(list_of_acurate_score, 'acurate list');
+    // console.log(list_of_wickets, 'wickets');
+
+
+    // console.log(score2, 'score');
+    // console.log(list_of_score2, 'list score');
+    // console.log(list_of_acurate_score2, 'acurate list');
+    // console.log(list_of_wickets2, 'wickets');
 }

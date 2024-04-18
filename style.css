@@ -374,4 +374,19 @@ body
     .main-con, #con-1, #con-2 {
         max-width: 100%;
     }
+
+    .main-con #con-5 #con-10 #scoreFooter {
+        font-size: 9px;
+    }
+
+    .main-con #con-2 .teams .images {
+        width: 80px;
+        height: 40px;
+    }
+
+    .main-con #con-5 #con-10 #scoreFooter #img5, #img6 {
+        width: 30px;
+        height: 15px;
+    }
 }
+
