@@ -26,6 +26,11 @@ body
     display: inline-block;
 }
 
+.opacity
+{
+    opacity: 0.4;
+}
+
 .main-con
 {
     /* overflow: hidden; */
