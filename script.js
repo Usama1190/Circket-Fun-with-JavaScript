@@ -374,6 +374,7 @@ function startSecond() {
 
         document.getElementById('score').innerHTML = 
         oppo_country_name + ': ' + sum_of_score2_global;
+
         // console.log(a, 'oppo country name');
     }
     else if(a == 1) {
