@@ -207,27 +207,23 @@ function matchType(id) {
 
 // first ining
 var score;
-
 var list_of_score = [];
-
 var list_of_acurate_score = [];
-
 var list_of_wickets = [];
-
 var sum_of_score_global = 0;
-
 var target;
 
 // second ining
 var score2;
-
 var list_of_score2 = [];
-
 var list_of_acurate_score2 = [];
-
 var list_of_wickets2 = [];
-
 var sum_of_score2_global = 0;
+
+// Target detection
+var target_detect = 0;
+var target_detection = 0
+var balls_detect = 6;
 
 
 function Score() {
@@ -400,7 +396,6 @@ function secondScore() {
     let push_score_list = list_of_score2.push(score2);
 
     // console.log(list_of_score2, 'list of score2 first');
-
     // console.log(list_of_score2.length, 'list of score 2 length first');
 
     if(list_of_score2.length > 5) {
@@ -461,13 +456,10 @@ function secondScore() {
         list_of_acurate_score2.push(score2);
     }
 
-    console.log(list_of_score2, 'list of score 2');
-
-    console.log(list_of_score2.length, 'list score 2 length');
-
-    console.log(list_of_acurate_score2, 'list accurate score 2 length = 2');
-
-    console.log(list_of_acurate_score2.length, 'list accurate score 2 length = 2');
+    // console.log(list_of_score2, 'list of score 2');
+    // console.log(list_of_score2.length, 'list score 2 length');
+    // console.log(list_of_acurate_score2, 'list accurate score 2 length = 2');
+    // console.log(list_of_acurate_score2.length, 'list accurate score 2 length = 2');
 
     let sum_of_score2 = 0;
 
@@ -477,9 +469,8 @@ function secondScore() {
 
     sum_of_score2_global = sum_of_score2;
 
-    console.log(sum_of_score2, 'sum of score2');
-
-    console.log(a, 'a inside score');
+    // console.log(sum_of_score2, 'sum of score2');
+    // console.log(a, 'a inside score');
 
 
     if( a == 0) {
@@ -508,11 +499,30 @@ function secondScore() {
         }
     }
 
-    console.log(list_of_score2, 'list_of_score2');
-    console.log(list_of_acurate_score2, 'list_of_acurate_score2');
-    console.log(list_of_wickets2, 'list_of_wickets2');
-    console.log(sum_of_score_global, 'sum_of_score_global');
-    console.log(sum_of_score2_global, 'sum_of_score2_global');
+    if(score2 < 7) {
+        target = target - score2;
+        --balls_detect;
+    }
+    else if(score2 > 6) {
+        --balls_detect;
+    }
+
+    if(a == 1) {
+        document.getElementById('para5').innerHTML = our_country_name + 
+        ' needs ' + target + ' runs in ' + balls_detect + 
+        ' balls to win.';
+    }
+    else if(a == 0) {
+        document.getElementById('para5').innerHTML = oppo_country_name + 
+        ' needs ' + target + ' runs in ' + balls_detect + 
+        ' balls to win.';
+    }
+
+    // console.log(list_of_score2, 'list_of_score2');
+    // console.log(list_of_acurate_score2, 'list_of_acurate_score2');
+    // console.log(list_of_wickets2, 'list_of_wickets2');
+    // console.log(sum_of_score_global, 'sum_of_score_global');
+    // console.log(sum_of_score2_global, 'sum_of_score2_global');
 
 
     if(list_of_score2.length > 5) {
@@ -546,21 +556,9 @@ function secondScore() {
 
     if(score2 > 6) {
         list_of_wickets2.push('w');
-        // console.log(list_of_wickets2);
     }
 
     document.getElementById('balls').innerHTML = 'Over: ' + list_of_score2;
 
     document.getElementById('wic').innerHTML ='Wics: ' + list_of_wickets2.length;
-
-    // console.log(score, 'score');
-    // console.log(list_of_score, 'list score');
-    // console.log(list_of_acurate_score, 'acurate list');
-    // console.log(list_of_wickets, 'wickets');
-
-
-    // console.log(score2, 'score');
-    // console.log(list_of_score2, 'list score');
-    // console.log(list_of_acurate_score2, 'acurate list');
-    // console.log(list_of_wickets2, 'wickets');
 }
